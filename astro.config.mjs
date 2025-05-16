@@ -11,6 +11,7 @@ export default defineConfig({
       alias: {
         '@components': path.resolve('./src/components'),
         '@layouts': path.resolve('./src/layouts'),
+        '@utils': path.resolve('./src/utils'),
       },
     },
   }
