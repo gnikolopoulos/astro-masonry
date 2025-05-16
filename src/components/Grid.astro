@@ -1,46 +1,158 @@
 ---
 import { Image } from 'astro:assets';
+import Box from '@components/Box.astro';
 ---
 
 <section class="p-2.5 grid grid-rows-8 lg:grid-rows-5 grid-cols-1 lg:grid-cols-6 gap-2.5 h-full">
-	<div class="bg-[url(https://picsum.photos/640?grayscale&random=1.webp)] bg-cover lg:col-span-2 lg:row-span-3 aspect-square lg:aspect-auto relative group">
-		<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out p-12 bg-slate-500/75">
-			<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sit amet justo et convallis. In interdum quam eget consequat ultrices. Donec iaculis urna at fermentum pellentesque. Pellentesque sed nulla turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="bg-[url(https://picsum.photos/640?grayscale&random=2.webp)] bg-cover lg:col-span-2 lg:row-span-2 aspect-square lg:aspect-auto relative group">
-		<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out p-12 bg-slate-500/75">
-			<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sit amet justo et convallis. In interdum quam eget consequat ultrices. Donec iaculis urna at fermentum pellentesque. Pellentesque sed nulla turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="bg-[url(https://picsum.photos/640?grayscale&random=3.webp)] bg-cover lg:col-span-2 lg:row-span-2 aspect-square lg:aspect-auto relative group">
-		<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out p-12 bg-slate-500/75">
-			<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sit amet justo et convallis. In interdum quam eget consequat ultrices. Donec iaculis urna at fermentum pellentesque. Pellentesque sed nulla turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="bg-[url(https://picsum.photos/640?grayscale&random=4.webp)] bg-cover col-span-1 aspect-square lg:aspect-auto relative group">
-		<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out p-5 bg-slate-500/75">
-			<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="bg-[url(https://picsum.photos/640?grayscale&random=5.webp)] bg-cover col-span-1 aspect-square lg:aspect-auto relative group">
-		<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out p-5 bg-slate-500/75">
-			<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="bg-[url(https://picsum.photos/640?grayscale&random=6.webp)] bg-cover lg:col-span-2 lg:row-span-3 aspect-square lg:aspect-auto relative group">
-		<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out p-12 bg-slate-500/75">
-			<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sit amet justo et convallis. In interdum quam eget consequat ultrices. Donec iaculis urna at fermentum pellentesque. Pellentesque sed nulla turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="bg-[url(https://picsum.photos/640?grayscale&random=7.webp)] bg-cover lg:col-span-2 lg:row-span-2 aspect-square lg:aspect-auto relative group">
-		<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out p-12 bg-slate-500/75">
-			<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sit amet justo et convallis. In interdum quam eget consequat ultrices. Donec iaculis urna at fermentum pellentesque. Pellentesque sed nulla turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
-	<div class="bg-[url(https://picsum.photos/640?grayscale&random=8.webp)] bg-cover lg:col-span-2 lg:row-span-2 aspect-square lg:aspect-auto relative group">
-		<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out p-12 bg-slate-500/75">
-			<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sit amet justo et convallis. In interdum quam eget consequat ultrices. Donec iaculis urna at fermentum pellentesque. Pellentesque sed nulla turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-	</div>
+	<Box
+		size='large',
+		overlayColor='bg-slate-500/75',
+		image={{
+			src: 'https://picsum.photos/640?grayscale&random=1.webp',
+			width: '640px',
+			height: '640px',
+			alt: 'image',
+		}},
+		link={{
+			href: "#",
+			text: "More &rarr;",
+		}}
+	>
+		<Fragment slot="content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sit amet justo et convallis. In interdum quam eget consequat ultrices. Donec iaculis urna at fermentum pellentesque. Pellentesque sed nulla turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		</Fragment>
+	</Box>
+
+	<Box
+		size='medium',
+		overlayColor='bg-teal-500/75',
+		image={{
+			src: 'https://picsum.photos/640?grayscale&random=2.webp',
+			width: '640px',
+			height: '640px',
+			alt: 'image',
+		}},
+		link={{
+			href: "#",
+			text: "More &rarr;",
+		}}
+	>
+		<Fragment slot="content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sit amet justo et convallis. In interdum quam eget consequat ultrices. Donec iaculis urna at fermentum pellentesque. Pellentesque sed nulla turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		</Fragment>
+	</Box>
+
+	<Box
+		size='medium',
+		overlayColor='bg-lime-500/75',
+		image={{
+			src: 'https://picsum.photos/640?grayscale&random=3.webp',
+			width: '640px',
+			height: '640px',
+			alt: 'image',
+		}},
+		link={{
+			href: "#",
+			text: "More &rarr;",
+		}}
+	>
+		<Fragment slot="content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sit amet justo et convallis. In interdum quam eget consequat ultrices. Donec iaculis urna at fermentum pellentesque. Pellentesque sed nulla turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		</Fragment>
+	</Box>
+
+	<Box
+		size='small',
+		overlayColor='bg-emerald-500/75',
+		image={{
+			src: 'https://picsum.photos/640?grayscale&random=4.webp',
+			width: '640px',
+			height: '640px',
+			alt: 'image',
+		}},
+		link={{
+			href: "#",
+			text: "More &rarr;",
+		}}
+	>
+		<Fragment slot="content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		</Fragment>
+	</Box>
+
+	<Box
+		size='small',
+		overlayColor='bg-sky-500/75',
+		image={{
+			src: 'https://picsum.photos/640?grayscale&random=5.webp',
+			width: '640px',
+			height: '640px',
+			alt: 'image',
+		}},
+		link={{
+			href: "#",
+			text: "More &rarr;",
+		}}
+	>
+		<Fragment slot="content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		</Fragment>
+	</Box>
+
+	<Box
+		size='large',
+		overlayColor='bg-indigo-500/75',
+		image={{
+			src: 'https://picsum.photos/640?grayscale&random=6.webp',
+			width: '640px',
+			height: '640px',
+			alt: 'image',
+		}},
+		link={{
+			href: "#",
+			text: "More &rarr;",
+		}}
+	>
+		<Fragment slot="content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sit amet justo et convallis. In interdum quam eget consequat ultrices. Donec iaculis urna at fermentum pellentesque. Pellentesque sed nulla turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		</Fragment>
+	</Box>
+
+	<Box
+		size='medium',
+		overlayColor='bg-violet-500/75',
+		image={{
+			src: 'https://picsum.photos/640?grayscale&random=7.webp',
+			width: '640px',
+			height: '640px',
+			alt: 'image',
+		}},
+		link={{
+			href: "#",
+			text: "More &rarr;",
+		}}
+	>
+		<Fragment slot="content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sit amet justo et convallis. In interdum quam eget consequat ultrices. Donec iaculis urna at fermentum pellentesque. Pellentesque sed nulla turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		</Fragment>
+	</Box>
+
+	<Box
+		size='medium',
+		overlayColor='bg-cyan-500/75',
+		image={{
+			src: 'https://picsum.photos/640?grayscale&random=8.webp',
+			width: '640px',
+			height: '640px',
+			alt: 'image',
+		}},
+		link={{
+			href: "#",
+			text: "More &rarr;",
+		}}
+	>
+		<Fragment slot="content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sit amet justo et convallis. In interdum quam eget consequat ultrices. Donec iaculis urna at fermentum pellentesque. Pellentesque sed nulla turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		</Fragment>
+	</Box>
 </section>

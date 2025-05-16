@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import type { Box as Props } from '~/types';
+
+const {
+  size = await Astro.slots.render('size'),
+  image = await Astro.slots.render('image'),
+  overlayColor = await Astro.slots.render('overlayColor'),
+
+  link = await Astro.slots.render('link'),
+
+  content = await Astro.slots.render('content'),
+} = Astro.props;
+
+const sizeClasses = {
+  small: {
+    wrapper: 'col-span-1',
+    content: 'p-12 lg:p-5',
+  },
+  medium: {
+    wrapper: 'lg:col-span-2 lg:row-span-2',
+    content: 'p-12',
+  },
+  large: {
+    wrapper: 'lg:col-span-2 lg:row-span-3',
+    content: 'p-12',
+  },
+};
+
+const selectedSize = sizeClasses[size] ?? sizeClasses.medium;
+const bgColor = overlayColor ?? 'bg-slate-500/75';
+---
+
+<div class={`${selectedSize.wrapper} aspect-square lg:aspect-auto relative group overflow-hidden`}>
+  <Image class="absolute inset-0" {...image} />
+  <div class={`flex flex-col justify-between absolute inset-0 lg:opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out ${bgColor} ${selectedSize.content}`}>
+    <p class="text-white" set:html={content} />
+
+    <div>
+      <a href={link.href} class="float-right text-white uppercase" target={link.target ? link.target : undefined} set:html={link.text} />
+    </div>
+  </div>
+</div>
