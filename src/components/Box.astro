@@ -32,7 +32,7 @@ const bgColor = overlayColor ?? 'bg-slate-500/75';
 ---
 
 <div class={`${selectedSize.wrapper} aspect-square lg:aspect-auto relative group overflow-hidden`}>
-  <Image class="absolute inset-0 h-full w-full object-cover" {...image} />
+  <slot name="image" />
   <div class={`flex flex-col justify-between absolute inset-0 lg:opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out ${bgColor} ${selectedSize.content}`}>
     <p class="text-white text-base" set:html={content} />
 
