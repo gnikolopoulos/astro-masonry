@@ -1,0 +1,25 @@
+---
+const {
+  title,
+  robots = {
+    index: true,
+    follow: true,
+  },
+  description,
+  openGraph = {},
+  twitter = {},
+} = Astro.props;
+
+let robotsContent: string[] = [];
+if (typeof robots.index !== "undefined") {
+  robotsContent.push(robots.index ? "index" : "noindex");
+}
+
+if (typeof robots.follow !== "undefined") {
+  robotsContent.push(robots.follow ? "follow" : "nofollow");
+}
+---
+
+<meta name="description" content={description} />
+<meta name="robots" content={robotsContent.join()} />
+<title>{title}</title>
