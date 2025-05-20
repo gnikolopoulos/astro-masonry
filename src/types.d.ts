@@ -7,6 +7,7 @@ export interface Link {
 export interface Box {
   size?: string;
   overlayColor: string;
+  title: string;
   content: string;
   link?: Link;
 }
