@@ -1,27 +1,26 @@
 ---
 ---
 
-<nav class="lg:flex grow justify-end items-center">
-  <div class="relative">
-    <div class="hidden md:flex gap-x-10 text-lg font-light uppercase">
-      <a href="/about">About</a>
-      <a href="#">Mission</a>
-      <a href="#">Contact</a>
-    </div>
+<navigation class="flex flex-col lg:flex-row grow justify-end items-end lg:items-center">
+  <button type="button" class="md:hidden flex items-center content-center p-2.5" id="menu-toggle">
+    <span class="sr-only">Menu</span>
+    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path class="stroke-gray-500" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+    </svg>
+  </button>
+  <ul class="opacity-0 lg:opacity-100 absolute lg:relative left-0 top-[80px] lg:top-0 w-full lg:w-fit list-none flex-col lg:flex lg:flex-row gap-2 lg:gap-10 text-lg font-light uppercase z-40 bg-white transition p-4 lg:pr-0" id="main-navigation">
+    <li><a href="/about">About</a></li>
+    <li><a href="#">Mission</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</navigation>
 
-    <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
-      <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
-        <span class="absolute -inset-0.5"></span>
-        <span class="sr-only">Open main menu</span>
+<script type="module">
+  const button = document.getElementById('menu-toggle');
+  const menu = document.getElementById('main-navigation');
 
-        <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-
-        <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-  </div>
-</nav>
+  button.addEventListener('click', () => {
+    menu.classList.toggle('opacity-0');
+    menu.classList.toggle('opacity-100');
+  });
+</script>
