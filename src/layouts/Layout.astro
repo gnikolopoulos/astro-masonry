@@ -22,7 +22,7 @@ const { metadata = {} } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<Metadata {...metadata} />
 	</head>
-	<body class="flex flex-col h-screen w-screen antialiased text-default bg-page tracking-tight">
+	<body class="flex flex-col h-screen min-h-screen w-screen antialiased text-default bg-page tracking-tight items-stretch">
 		<Header />
 		<main class="grow">
 			<slot />
