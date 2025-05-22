@@ -3,14 +3,12 @@ import { Image } from 'astro:assets';
 import type { Box as Props } from '~/types';
 
 const {
-  size = await Astro.slots.render('size'),
+  size,
   image = await Astro.slots.render('image'),
   overlayColor = 'bg-slate-500/75',
-
-  title = await Astro.slots.render('title'),
-  link = await Astro.slots.render('link'),
-
-  content = await Astro.slots.render('content'),
+  title,
+  link,
+  content,
 } = Astro.props;
 
 const sizeClasses = {
@@ -34,8 +32,8 @@ const selectedSize = sizeClasses[size] ?? sizeClasses.medium;
 <div class={`${selectedSize.wrapper} aspect-square lg:aspect-auto relative group overflow-hidden`}>
   <slot name="image" />
   <div class={`flex flex-col justify-between absolute inset-0 lg:opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out ${overlayColor} ${selectedSize.content}`}>
-    <p class="font-light text-white text-3xl uppercase" set:html={title} />
-    <p class="text-white text-base" set:html={content} />
+    {title && <h1 class="font-light text-white text-3xl uppercase" set:html={title} />}
+    {content && <p class="text-white text-base" set:html={content} />}
 
     <div>
       <a href={link.href} class="float-right font-medium text-white uppercase" target={link.target ? link.target : undefined} set:html={link.text} />
