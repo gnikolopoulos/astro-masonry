@@ -1,0 +1,17 @@
+---
+import Layout from '@layouts/Layout.astro';
+
+const metadata = {
+  title: '404 - Page not found - NatureCare',
+  description: 'NatureCare',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="flex p-2.5 h-full">
+    <div class="self-center w-full">
+      <h1 class="font-bold text-7xl uppercase mb-12 text-center">Ooops...</h1>
+      <p class="mb-6 text-center">Looks like the page you requested could not be found. Maybe try going back to the <a href="/">home page</a> and take it from there?</p>
+    </div>
+  </section>
+</Layout>

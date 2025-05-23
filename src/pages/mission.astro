@@ -1,0 +1,35 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import featured from '../assets/images/5840.jpg'
+
+const metadata = {
+  title: 'Our Mission - NatureCare',
+  description: 'NatureCare',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="flex flex-col lg:flex-row p-2.5 gap-12 h-full">
+    <div class="basis-1/3 relative overflow-hidden">
+      <Image src={featured} alt="About page featured" loading="eager" class="absolute inset-0 h-full w-full object-cover" />
+    </div>
+
+    <div class="basis-2/3 self-center">
+      <h1 class="font-bold text-7xl uppercase mb-12">Mission</h1>
+      <div class="flex flex-col lg:flex-row lg:gap-8 items-start">
+        <div class="basis-1/2">
+          <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porttitor pulvinar sodales. Cras consequat sed ipsum non finibus. Fusce diam risus, facilisis et porta id, tempus imperdiet purus. Cras elementum augue sit amet laoreet scelerisque. Praesent consectetur neque eu nunc fringilla ornare. Nam faucibus dui eget ipsum laoreet, quis facilisis turpis lacinia. Donec libero ante, ultrices et vestibulum eu, semper quis est. Suspendisse vitae orci pretium, dapibus leo ac, cursus eros. Donec et pulvinar erat.</p>
+
+          <p class="mb-6">Proin semper felis eget bibendum congue. Proin non justo sit amet tortor sodales blandit. Quisque pellentesque magna in felis vulputate porta. Mauris facilisis, nisl efficitur consectetur dictum, massa odio condimentum lorem, in gravida lorem velit ut leo. Vivamus consequat libero a arcu egestas mattis. Morbi volutpat, elit in condimentum mattis, elit lacus vulputate ipsum, in ultrices sem risus sed orci. Duis malesuada hendrerit sapien, eu malesuada sapien ullamcorper id. Pellentesque sodales nunc imperdiet, tincidunt lacus at, molestie dolor. Vivamus hendrerit tincidunt dolor. Donec vel diam vel neque convallis sagittis ut nec nulla. Quisque at augue pretium mauris ullamcorper pulvinar.</p>
+        </div>
+
+        <div class="basis-1/2">
+          <p class="mb-6">Nulla a turpis blandit, pharetra purus eget, semper sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus urna ligula, blandit elementum interdum nec, hendrerit lacinia turpis. Maecenas viverra metus quam. Integer id leo in elit dictum maximus. Nulla eget leo sed dolor venenatis pretium at nec lectus. Morbi tristique justo massa, sed gravida diam malesuada ut.</p>
+
+          <p class="mb-6">Aenean felis tortor, viverra nec commodo sed, sodales ac turpis. Donec porttitor arcu quis maximus convallis. Proin ut orci lectus. Integer pellentesque nibh dolor. Nulla id nunc libero. Nam et volutpat eros, id eleifend nisi. Suspendisse vel quam ullamcorper, iaculis ligula id, dignissim quam. Morbi a tincidunt nisi. Nunc blandit diam ac tellus convallis efficitur. Donec id dictum nisi. Suspendisse felis purus, pulvinar nec varius et, malesuada at nibh. Nunc porta nunc ut lacus dignissim commodo. Suspendisse at ligula nunc. Sed a orci pulvinar, rhoncus metus sed, vestibulum velit. Proin id arcu diam.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
